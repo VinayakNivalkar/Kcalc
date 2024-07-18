@@ -98,10 +98,20 @@ class NutritionState extends _$NutritionState {
       reqKcal = reqKcal - 500;
     }
 
+    double reqProtein = getProtein(user.weight);
+    double reqFat = getFat(user.weight);
+    double reqCarbohydrates = getCarbohydrates(user.weight);
+
     state = AsyncValue.data(NutritionStateData(
       date: date,
       reqKcal: reqKcal,
       consumedKcal: records.isEmpty ? 0 : getKcalConsumption(records),
+      reqProtein: reqProtein,
+      consumedProtein: records.isEmpty ? 0 : getProteinConsumption(records),
+      reqFat: reqFat,
+      consumedFat: records.isEmpty ? 0 : getFatConsumption(records),
+      reqCarbohydrates: reqCarbohydrates,
+      consumedCarbohydrates: records.isEmpty ? 0 : getCarbohydrateConsumption(records),
     ));
   }
 }

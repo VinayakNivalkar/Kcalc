@@ -139,11 +139,12 @@ class Home extends ConsumerWidget {
               ),
             ),
           ),
-          /*SizedBox(
+          nutri.hasValue ? SizedBox(
             width: double.infinity,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Card(
                     color: Theme.of(context).colorScheme.tertiaryContainer,
@@ -238,7 +239,7 @@ class Home extends ConsumerWidget {
                 ],
               ),
             ),
-          ),*/
+          ) : Container(),
         ],
       ),
       bottomNavigationBar: Padding(
